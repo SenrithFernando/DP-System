@@ -1,0 +1,106 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jan 19, 2023 at 04:14 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `doctorpatient`
+--
+CREATE DATABASE IF NOT EXISTS `doctorpatient` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `doctorpatient`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor`
+--
+
+CREATE TABLE `doctor` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `possision` varchar(50) NOT NULL,
+  `tele` varchar(12) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `doctor`
+--
+
+INSERT INTO `doctor` (`code`, `name`, `possision`, `tele`, `email`, `password`) VALUES
+('0002', 'Hansani d Gamage', 'child', '0912243166', 'rihan@gmail.com', '2002'),
+('0003', 'H D Gamge', 'Radiologists', '0779835388', 'rihansenrithvta@gmail.com', '2222'),
+('bib', 'ib', 'ub', 'ub', 'ub', '2002');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patientdetails`
+--
+
+CREATE TABLE `patientdetails` (
+  `code` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `age` varchar(10) NOT NULL,
+  `sex` varchar(12) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `date` varchar(12) NOT NULL,
+  `about` varchar(1000) NOT NULL,
+  `drug` varchar(1000) NOT NULL,
+  `telephne` varchar(15) NOT NULL,
+  `dccode` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `patientdetails`
+--
+
+INSERT INTO `patientdetails` (`code`, `name`, `age`, `sex`, `address`, `date`, `about`, `drug`, `telephne`, `dccode`) VALUES
+('0001', 'rihan', '20', 'male', 'galle', '2023/0/10', 'yxivyvfhvhvyi	\nnbxbxsbxjsl\nnjbxsxbsuxbs\nxbsxbsuxb', 'bhsxvsyvxs\nxkjxbxbx\nxlnxnxx\nxukbxjx\nsxjkxbx\n', '0779835388', ''),
+('0005', 'Senrith Fernando', '20', 'male', 'Gale', '', 'Cough', 'Dextromehorphan 2w\nPanadol 2w', '0779835388', '0003 '),
+('230111/01', 'Rihan', '20', 'male', 'Kithulampitiya,Galle', '2023/0/11', 'yvnrg\ngg\nnrn\nr\nnrnrnr\nnr\nnr\nyn\nyrn\n\nnr\nn\nrnrynr\nnr\n', 'nrnrtnrnyrnrynrynry\nnr\nnr\nn\nnrn\nr\nnrnrnrny\nnrt\nnrn\nrnry\nnyr\nn\nrn\nrn\nr', '077983538', '0002 '),
+('bb', 'b', 'b', 'bu', 'bubu', '2023/0/11', 'yib\ntt\nt\nt\nteg\neg\ng\nerg\nrg\nrg\nrg\nr\ngre\ngr\neg\nreg\nr\ngr\n', 'grgrgrgrgrgrgrg\nrg\nrgreg\nreg\nre\ngr\ngr\ngr\ng\nrg\nreg\nregrgrgerg\nrg\nregr\ngr\ngr', 'b', 'bib '),
+('bbfb', 'bfbf', 'bfbf', 'bf', 'fb', '2023/0/10', 'ffff\nf\n\nv\n\nv\nf\n\n\nf\nf\nfbf\nbf\nbf\nbf', '\nvffvf\nffb\nfbf\nbf\nbf\nbf\nbfb', 'bbb', ''),
+('g', 'ub', 'ib', '', 'b', 'b', 'bb', '', '', ''),
+('hu', 'u', 'ub', 'ui', 'bui', '', '', '', 'ub', ''),
+('iv', 'ii', 'ib', 'ib', '', '', '', '', '', ''),
+('RY', 'WTE', 'WSR', 'DHD', 'SGS', '2023/0/10', 'YFY\nBB\nB\nBFB\nFBFB\n\n', 'VSVSV\nVDS\nVDV\nDV\nDSV\n', 'WRS', ''),
+('vavfvf', 'vsvvv', 'vsvsd', 'svdsv', 'dsvdsv', '2023/0/10', 'vsvv\nvd\nvvd\nvsv\nvd\nvsdv\nv', 'sdvs\nvsdv\ndsvds\nvsdv\ndsvd\nvsd\nvsdvs\ndv', 'vdvsv', ''),
+('vfv', 'vvev', 'evev', '', '', '2023/0/10', 'vfvfvfv\nvv\nvev\neve\nveve\nve', 've\nvv\neve\nve\nvev', 'evev', ''),
+('vv', 'vg', 'vg', 'v', 'gv', '2023/0/10', 'vgvg	vg	v	gv	g	vgv	g	vg	v	gv', 'off\ndf\nf\nf\nfb\nfb\nfbf\nbf\nb\n', 'vg', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `doctor`
+--
+ALTER TABLE `doctor`
+  ADD PRIMARY KEY (`code`);
+
+--
+-- Indexes for table `patientdetails`
+--
+ALTER TABLE `patientdetails`
+  ADD PRIMARY KEY (`code`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
